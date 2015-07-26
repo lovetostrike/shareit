@@ -8,7 +8,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom("METEOR@1.0");
   api.use(['coffeescript', 'less', 'templating', 'underscore', 'jquery'], 'client');
-  api.use(['fortawesome:fontawesome@4.2.0'], 'client');
+  // api.use(['fortawesome:fontawesome@4.2.0'], 'client');
 
   api.imply('spiderable', ['client', 'server']);
   api.addFiles([
@@ -34,11 +34,12 @@ Package.onTest(function (api) {
     'test-helpers',
     'templating',
     'coffeescript'
-    ])
-    api.use('joshowens:shareit')
+  ]);
+
+  api.use('joshowens:shareit');
 
   api.addFiles([
     'tests/client.html',
     'tests/client.js'
-    ], 'client')
-})
+  ], 'client');
+});
