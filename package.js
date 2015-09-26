@@ -1,14 +1,14 @@
 Package.describe({
   summary: 'A meteor package that makes social sharing easy',
   git: 'https://github.com/meteorclub/shareit',
-  version: '0.4.0',
+  version: '0.4.1',
   name: "joshowens:shareit"
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom("METEOR@1.0");
+  api.versionsFrom('METEOR@1.2.0.1');
   api.use(['coffeescript', 'less', 'templating', 'underscore', 'jquery'], 'client');
-  api.use(['fortawesome:fontawesome@4.2.0'], 'client');
+  // api.use(['fortawesome:fontawesome@4.2.0'], 'client');
 
   api.imply('spiderable', ['client', 'server']);
   api.addFiles([
@@ -34,11 +34,12 @@ Package.onTest(function (api) {
     'test-helpers',
     'templating',
     'coffeescript'
-    ])
-    api.use('joshowens:shareit')
+  ]);
+
+  api.use('joshowens:shareit');
 
   api.addFiles([
     'tests/client.html',
     'tests/client.js'
-    ], 'client')
-})
+  ], 'client');
+});
